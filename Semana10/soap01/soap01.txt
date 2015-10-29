@@ -1,0 +1,11 @@
+
+SOAUI
+
+http://localhost:8080/clientews?wsdl
+
+wsimport.exe
+------------
+
+%JAVA_HOME%/bin/wsimport.exe -s nombre_carpeta -keep http://localhost:8080/clientews?wsdl
+
+
