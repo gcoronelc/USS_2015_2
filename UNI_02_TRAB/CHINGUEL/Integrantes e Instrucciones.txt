@@ -1,0 +1,9 @@
+INTEGRANTES:
+
+- Chinguel Tineo Segundo
+- Casiano Bautista Jazmin
+- Guevara Zavaleta Noheli
+
+En el proyecto php EUREKASERVICES, carpeta DAO, estan los archivos de mysql que incluyen las vistas y procedimientos usados.
+
+En el Proyecto Practica10_HttpClient realizado con la version API 23, clase Util esta la configuracion de la conexion al webservice. 

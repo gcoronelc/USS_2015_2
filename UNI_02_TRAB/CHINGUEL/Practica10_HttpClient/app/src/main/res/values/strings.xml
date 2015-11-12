@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Practica10_HttpClient</string>
+<string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+        <string name="title_activity_cliente">ClienteActivity</string>
+        <string name="title_activity_movimientos">MovimientosActivity</string>
+        <string name="title_activity_layout_item">layout_item</string>
+    <string name="title_activity_activity_login">activity_login</string>
+    <string name="title_activity_activity_retiro">activity_retiro</string>
+    <string name="title_activity_activity_deposito">Activity_deposito</string>
+</resources>
