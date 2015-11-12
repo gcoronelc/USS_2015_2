@@ -1,7 +1,8 @@
-package pe.uss.egcc.webserviceimpl;
+package pe.uss.egcc.wsimpl;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.ksoap2.SoapEnvelope;
@@ -12,28 +13,34 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 /**
- * Created by Gustavo Coronel on 10/11/2015.
+ * Created by Gustavo Coronel on 12/11/2015.
  */
-public class WSCelsiusToFahrenheit extends AsyncTask {
+public class WSSumar extends AsyncTask {
 
+  private final String NAMESPACE = "http://ws.egcc.pe/";
+  private final String URL = "http://192.168.1.36:8080/WSDemo02Server/WSDemo02?wsdl";
+  private final String METHOD_NAME = "sumar";
+  private final String SOAP_ACTION = "http://ws.egcc.pe/sumar";
+  private final String TAG = "WSSumar";
 
-  private final String NAMESPACE = "http://www.w3schools.com/webservices/";
-  private final String URL = "http://www.w3schools.com/webservices/tempconvert.asmx";
-  private final String SOAP_ACTION = "http://www.w3schools.com/webservices/CelsiusToFahrenheit";
-  private final String METHOD_NAME = "CelsiusToFahrenheit";
-  private String TAG = "WSCelsius";
-  private static String celsius;
-  private static String fahren = "";
-  private TextView tvResult;
+  private String num1;
+  private String num2;
+  private TextView tvResultado;
+
+  private String resultado;
   private boolean hayError;
   private String errorMessage;
 
-  public void setTvResult(TextView tvResult) {
-    this.tvResult = tvResult;
+  public void setNum1(String num1) {
+    this.num1 = num1;
   }
 
-  public static void setCelsius(String celsius) {
-    WSCelsiusToFahrenheit.celsius = celsius;
+  public void setNum2(String num2) {
+    this.num2 = num2;
+  }
+
+  public void setTvResultado(TextView tvResultado) {
+    this.tvResultado = tvResultado;
   }
 
 
@@ -43,16 +50,19 @@ public class WSCelsiusToFahrenheit extends AsyncTask {
     // Creamos el objeto SOAP
     SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
     // Creamos el objeto para los datos
-    PropertyInfo celsiusPI = new PropertyInfo();
-    // Dato según el archivo asmx
-    celsiusPI.setName("Celsius");
-    celsiusPI.setValue(celsius);
-    celsiusPI.setType(double.class);
+    PropertyInfo piNum1 = new PropertyInfo();
+    PropertyInfo piNum2 = new PropertyInfo();
+    // Dato según el archivo WS
+    piNum1.setName("n1");
+    piNum1.setValue(num1);
+    piNum2.setName("n2");
+    piNum2.setValue(num2);
     //Asociamos lo anterior al objeto request
-    request.addProperty(celsiusPI);
+    request.addProperty(piNum1);
+    request.addProperty(piNum2);
     //Creamos el objeto envelope
     SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-    envelope.dotNet = true;
+    envelope.dotNet = false;
     //Definimos la respuesta
     envelope.setOutputSoapObject(request);
     //Creamos el objeto HTTP
@@ -63,7 +73,7 @@ public class WSCelsiusToFahrenheit extends AsyncTask {
       //Obtiene la respuesta
       SoapPrimitive response = (SoapPrimitive) envelope.getResponse();
       //Asigna la respuesta a una variable
-      fahren = response.toString() + "° F";
+      resultado = response.toString();
     } catch (Exception e) {
       hayError = true;
       errorMessage = "Error en el proceso.";
@@ -75,18 +85,12 @@ public class WSCelsiusToFahrenheit extends AsyncTask {
   @Override
   protected void onPreExecute() {
     Log.i(TAG, "onPreExecute");
-    tvResult.setText("Calculating...");
-
+    tvResultado.setText("Procesando...");
   }
 
   @Override
   protected void onPostExecute(Object o) {
     Log.i(TAG, "onPostExecute");
-    tvResult.setText(hayError?errorMessage:fahren);
-  }
-
-  @Override
-  protected void onProgressUpdate(Object[] values) {
-    Log.i(TAG, "onProgressUpdate");
+    tvResultado.setText(hayError ? errorMessage : resultado);
   }
 }

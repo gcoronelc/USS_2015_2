@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tvResult = (TextView) findViewById(R.id.tvResultado);
     // Creando el Objeto de WS
     WSCelsiusToFahrenheit ws = new WSCelsiusToFahrenheit();
-    ws.setCelcius(etDato.getText().toString());
+    ws.setCelsius(etDato.getText().toString());
     ws.setTvResult(tvResult);
     ws.execute();
-
   }
 }

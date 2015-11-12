@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import pe.uss.egcc.wsimpl.WSHello;
+import pe.uss.egcc.wsimpl.WSSumar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,5 +50,18 @@ public class MainActivity extends AppCompatActivity {
     wsHello.setNombre(etNombre.getText().toString());
     wsHello.setTvSaludo(tvSaludo);
     wsHello.execute();
+  }
+
+  public void btnProcesarSumaClick(View view){
+    // Controles
+    EditText etNum1 = (EditText) findViewById(R.id.etNum1);
+    EditText etNum2 = (EditText) findViewById(R.id.etNum2);
+    TextView tvResultado = (TextView) findViewById(R.id.tvResultado);
+    // Proceso
+    WSSumar wsSumar = new WSSumar();
+    wsSumar.setNum1(etNum1.getText().toString());
+    wsSumar.setNum2(etNum2.getText().toString());
+    wsSumar.setTvResultado(tvResultado);
+    wsSumar.execute();
   }
 }
