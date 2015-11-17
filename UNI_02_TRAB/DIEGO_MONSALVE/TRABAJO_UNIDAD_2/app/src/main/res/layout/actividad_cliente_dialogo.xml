@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strdni"
+            android:id="@+id/etDNIStr"
+            android:layout_below="@+id/etCodigoStr"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombreStr"
+            android:id="@+id/etNombreStr"
+            android:layout_below="@+id/etDNIStr"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/paternoStr"
+            android:id="@+id/etPaternoStr"
+            android:layout_below="@+id/etNombreStr"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/maternoStr"
+            android:id="@+id/etMaternoStr"
+            android:layout_below="@+id/etPaternoStr"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/codigoStr"
+            android:id="@+id/etCodigoStr"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ciudadStr"
+            android:id="@+id/etCiudadStr"
+            android:layout_below="@+id/etMaternoStr"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dirStr"
+            android:id="@+id/etDirStr"
+            android:layout_below="@+id/etCiudadStr"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/telStr"
+            android:id="@+id/etTelStr"
+            android:layout_below="@+id/etDirStr"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etCodigo"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/etDNI"
+            android:layout_alignStart="@+id/etDNI" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etDNI"
+            android:layout_below="@+id/etCodigo"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/etDirStr"
+            android:layout_toEndOf="@+id/etDirStr" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etNombre"
+            android:layout_below="@+id/etDNI"
+            android:layout_alignRight="@+id/etDNI"
+            android:layout_alignEnd="@+id/etDNI"
+            android:layout_toRightOf="@+id/etDirStr"
+            android:layout_toEndOf="@+id/etDirStr" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etPaterno"
+            android:layout_below="@+id/etNombreStr"
+            android:layout_alignRight="@+id/etNombre"
+            android:layout_alignEnd="@+id/etNombre"
+            android:layout_toEndOf="@+id/etDirStr"
+            android:layout_toRightOf="@+id/etDirStr" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etMaterno"
+            android:layout_below="@+id/etPaterno"
+            android:layout_alignRight="@+id/etPaterno"
+            android:layout_alignEnd="@+id/etPaterno"
+            android:layout_toRightOf="@+id/etDirStr"
+            android:layout_toEndOf="@+id/etDirStr" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etCiudad"
+            android:layout_below="@+id/etMaterno"
+            android:layout_alignRight="@+id/etMaterno"
+            android:layout_alignEnd="@+id/etMaterno"
+            android:layout_toEndOf="@+id/etDirStr"
+            android:layout_toRightOf="@+id/etDirStr" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etDireccion"
+            android:layout_above="@+id/etTelStr"
+            android:layout_alignRight="@+id/etCiudad"
+            android:layout_alignEnd="@+id/etCiudad"
+            android:layout_toRightOf="@+id/etDirStr"
+            android:layout_toEndOf="@+id/etDirStr" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etTelefono"
+            android:layout_alignTop="@+id/etTelStr"
+            android:layout_toRightOf="@+id/etDirStr"
+            android:layout_alignRight="@+id/etDireccion"
+            android:layout_alignEnd="@+id/etDireccion" />
+    </RelativeLayout>
+</LinearLayout>

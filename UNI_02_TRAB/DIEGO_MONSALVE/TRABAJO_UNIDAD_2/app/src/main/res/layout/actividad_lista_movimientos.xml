@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="pe.uss.monsalve.trabajo_unidad_2.ActividadListaMovimientos">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cuentanO"
+        android:id="@+id/etCuentaNo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/saldoStr"
+        android:id="@+id/etSaldoStr"
+        android:layout_below="@+id/campoCuenta"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/datosCliente"
+        android:id="@+id/etDatosCliente"
+        android:layout_below="@+id/etSaldoStr"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="23dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombresStr"
+        android:id="@+id/etNombresStr"
+        android:layout_below="@+id/etDNIStr"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/apelldosStr"
+        android:id="@+id/etApellidosStr"
+        android:layout_below="@+id/etNombresStr"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dniStr"
+        android:id="@+id/etDNIStr"
+        android:layout_below="@+id/etDatosCliente"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/movimientos"
+        android:id="@+id/etMovimientos"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/etApellidosStr"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listaMovimientos"
+        android:layout_below="@+id/etMovimientos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/botonRegresar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/regresar"
+        android:id="@+id/botonRegresar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verMss"
+        android:id="@+id/botonVerCliente"
+        android:textSize="8sp"
+        android:layout_above="@+id/etNombres"
+        android:layout_alignRight="@+id/etNombres"
+        android:layout_alignEnd="@+id/etNombres"
+        android:layout_alignTop="@+id/etDatosCliente"
+        android:layout_toRightOf="@+id/campoCuenta"
+        android:layout_toEndOf="@+id/campoCuenta" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etSaldo"
+        android:layout_above="@+id/etDatosCliente"
+        android:layout_toRightOf="@+id/etCuentaNo"
+        android:layout_alignRight="@+id/botonConsultar"
+        android:layout_alignEnd="@+id/botonConsultar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDNI"
+        android:layout_above="@+id/etNombresStr"
+        android:layout_toRightOf="@+id/etDNIStr"
+        android:layout_alignRight="@+id/botonRegresar"
+        android:layout_alignEnd="@+id/botonRegresar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNombres"
+        android:layout_below="@+id/etDNI"
+        android:layout_toRightOf="@+id/etApellidosStr"
+        android:layout_alignRight="@+id/botonConsultar"
+        android:layout_alignEnd="@+id/botonConsultar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etApellidos"
+        android:layout_below="@+id/etNombres"
+        android:layout_toRightOf="@+id/etApellidosStr"
+        android:layout_alignRight="@+id/etNombres"
+        android:layout_alignEnd="@+id/etNombres" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/campoCuenta"
+        android:layout_below="@+id/etCuentaNo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/botonConsultar"
+        android:layout_toStartOf="@+id/botonConsultar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consultar"
+        android:id="@+id/botonConsultar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/etSaldo" />
+</RelativeLayout>

@@ -1,0 +1,5 @@
+INTEGRANTES:
+Diego Andres Monsalve Tellez
+
+- En la clase UTIL.java de la aplicacion Android, colocar la direccion IPv4 de su equipo.
+- Poner la carpeta EurekaServices en el servidor WEB

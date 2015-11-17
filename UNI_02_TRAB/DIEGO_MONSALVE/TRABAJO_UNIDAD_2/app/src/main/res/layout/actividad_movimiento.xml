@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="pe.uss.monsalve.trabajo_unidad_2.ActividadMovimiento">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/etMovimiento"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/movimiento" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cuentaNo"
+        android:id="@+id/etCuentaNo"
+        android:layout_below="@+id/etMovimiento"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNumeroCuenta"
+        android:layout_alignBottom="@+id/etCuentaNo"
+        android:layout_alignRight="@+id/etMovimiento"
+        android:layout_alignEnd="@+id/etMovimiento"
+        android:layout_toRightOf="@+id/etCuentaNo"
+        android:layout_toEndOf="@+id/etCuentaNo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/montoActual"
+        android:id="@+id/etMontoActualText"
+        android:layout_below="@+id/etCuentaNo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etSaldo"
+        android:layout_below="@+id/etNumeroCuenta"
+        android:layout_toRightOf="@+id/etMontoActualText"
+        android:layout_alignRight="@+id/etNumeroCuenta"
+        android:layout_alignEnd="@+id/etNumeroCuenta" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/digiteMonto"
+        android:id="@+id/etDigiteMonto"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/etMontoActualText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/campoMonto"
+        android:layout_below="@+id/etDigiteMonto"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/continuar"
+        android:id="@+id/botonContinuar"
+        android:layout_below="@+id/campoMonto"
+        android:layout_alignRight="@+id/etNumeroCuenta"
+        android:layout_alignEnd="@+id/etNumeroCuenta"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelar"
+        android:id="@+id/botonCancelar"
+        android:layout_below="@+id/botonContinuar"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
