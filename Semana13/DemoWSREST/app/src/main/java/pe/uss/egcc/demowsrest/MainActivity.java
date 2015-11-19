@@ -13,11 +13,13 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 
 import pe.uss.egcc.model.Greeting;
+import pe.uss.egcc.model.ProductoBean;
 
 public class MainActivity extends AppCompatActivity {
 
   private TextView tvId;
   private TextView tvContent;
+  private TextView tvProducto;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     // Controles
     tvId = (TextView) findViewById(R.id.tvId);
     tvContent = (TextView) findViewById(R.id.tvContent);
+    tvProducto = (TextView) findViewById(R.id.tvProducto);
   }
 
   @Override
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
   public void btnConsultarClick(View view){
     (new HttpRequestTask()).execute();
+    new HttpProductoRequest() .execute();
   }
 
   private class HttpRequestTask extends AsyncTask<Void, Void, Greeting> {
@@ -76,5 +80,27 @@ public class MainActivity extends AppCompatActivity {
       tvContent.setText(greeting.getContent());
     }
 
+  }
+
+  private class HttpProductoRequest extends AsyncTask<Void, Void, ProductoBean> {
+
+    @Override
+    protected ProductoBean doInBackground(Void... params) {
+      try {
+        final String url = "http://192.168.1.36:8087/uss/egcc/producto/2";
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+        ProductoBean productoBean  = restTemplate.getForObject(url, ProductoBean.class);
+        return productoBean;
+      } catch (Exception e) {
+        Log.e("MainActivity", e.getMessage(), e);
+      }
+      return null;
+    }
+
+    @Override
+    protected void onPostExecute(ProductoBean bean) {
+      tvProducto.setText(bean.getCodigo() + " - " + bean.getNombre());
+    }
   }
 }
