@@ -15,7 +15,37 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    crearBaseDeDatos();
+    consultar(5);
+  }
+
+  private void consultar(int id) {
+    ContactoBean contactoBean;
+    ContactoDAO contactoDAO = new ContactoDAO(this);
+    contactoDAO.open();
+    contactoBean = contactoDAO.traerContacto(id);
+
+    TextView tvMensaje = (TextView) findViewById(R.id.tvMensaje);
+    tvMensaje.setText(contactoBean.getNombre());
+  }
+
+  private void modificar() {
+    TextView tvMensaje = (TextView) findViewById(R.id.tvMensaje);
+    ContactoDAO dao = null;
+    try {
+      dao = new ContactoDAO(this);
+      dao.open();
+      ContactoBean contactoBean = new ContactoBean("Torres Jose", "23456712", "jtorres@gmail");
+      contactoBean.setId(3);
+      dao.update(contactoBean);
+      tvMensaje.setText("Registro actualizado.");
+    } catch (Exception e) {
+      tvMensaje.setText(e.getMessage());
+    } finally {
+      try {
+        dao.close();
+      } catch (Exception e2) {
+      }
+    }
   }
 
   private void crearBaseDeDatos() {
